@@ -594,7 +594,7 @@ img {
   display: block;
 }
 
-.address-list :not(:last-child) {
+.address-list:not(:last-child) {
   margin-bottom: 9px;
 }
 
