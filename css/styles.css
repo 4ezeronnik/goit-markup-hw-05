@@ -28,6 +28,12 @@ ul {
   margin-bottom: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .list {
   list-style: none;
   margin: 0;
@@ -57,6 +63,51 @@ ul {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+}
+
+.site-nav-link {
+  position: relative;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.site-nav-link.current::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  transform: scaleX(1);
+}
+.site-nav-link::after {
+  content: "";
+
+  transform: scaleX(0);
+  transition: transform var(--animation-time) var(--main-timing-function);
+}
+.site-nav-link:hover::after,
+.site-nav-link:focus::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  transform: scaleX(1);
 }
 
 /* Auth-nav  */
@@ -290,8 +341,24 @@ ul {
 
 .item-secondary {
   width: 370px;
+  position: relative;
 }
 
+.what-we-do-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--primary-white-color);
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
 .secondary-container .item-secondary + .item-secondary {
   margin-left: 30px;
 }
@@ -474,6 +541,44 @@ ul {
 
 .item-card:nth-child(3n + 1) {
   margin-left: 0;
+}
+
+.samples-link:hover,
+.samples-link:focus {
+  color: var(--primary-text-color);
+}
+
+.samples-card-thumb {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.samples-action-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: translateY(100%);
+  transition: transform var(--animation-time) var(--main-timing-function);
+
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 63px;
+  padding-bottom: 63px;
+
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--primary-white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+}
+.samples-card:hover .samples-action-text,
+.samples-card:focus .samples-action-text {
+  transform: translateY(0);
 }
 
 /* Футер */
