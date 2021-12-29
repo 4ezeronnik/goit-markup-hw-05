@@ -68,8 +68,8 @@ img {
 .site-nav-link {
   position: relative;
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .site-nav-link.current::after {
